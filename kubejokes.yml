@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jokes
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jokes
+        label2: test
+    spec:
+      containers:
+        - name: jokes
+          image: harbor.run.haas-236.pez.pivotal.io/suganthi/jokes:latest 
+          ports:
+            - containerPort: 8080
+      imagePullSecrets:
+        - name: regcred
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jokes-service
+  labels:
+    name: jokes-service
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: jokes
+  type: LoadBalancer
