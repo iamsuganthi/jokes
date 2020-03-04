@@ -13,7 +13,7 @@ public class JokesController {
     @GetMapping("/api/jokes")
     List<String> getJokes() {
         List<String> jokes = new ArrayList<>();
-        jokes.add("How you doing!");
+        jokes.add("How you doing buddy!");
         jokes.add("Bazinga");
 
         return jokes;
