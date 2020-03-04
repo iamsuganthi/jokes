@@ -29,3 +29,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### PBS config ###
+pbs.yml
+image.yml
+git.yml
