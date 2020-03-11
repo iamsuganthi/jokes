@@ -13,3 +13,12 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+resources:         
+  containers:
+  - container: jokes 
+    type: DockerHub
+    connection: myDockerRegistry
+    image: jokes 
+    trigger:
+      tags:
+        include: [skrishnavathi/jokes:latest]
