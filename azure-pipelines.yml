@@ -21,4 +21,4 @@ resources:
     image: jokes 
     trigger:
       tags:
-        include: [skrishnavathi/jokes:latest]
+        include: ['skrishnavathi/jokes:latest']
